@@ -1,1 +1,1 @@
-ReactDOM.render(<h1></h1>)
+ReactDom.render(<ul><li>onions</li></ul>, document.getElementById("root"))
