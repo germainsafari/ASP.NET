@@ -19,3 +19,5 @@ all = ""
 for (let i in object) {
     all += object[i] + ""
 };
+
+console.log(txt)
