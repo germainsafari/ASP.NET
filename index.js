@@ -37,5 +37,22 @@ function myFuntion() {
         if (x < 5) throw "not a number";
     } catch (err) {
         console.log(err)
+        message.innerHTML = "Input is " + err;
+    }
+}
+
+// myFun
+
+//
+// 
+var txt = "";
+for (var x in person) {
+    txt += person[x] + " ";
+}
+document.getElementById("demo").innerHTML = txt;
+
+const person = {
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
     }
 }
