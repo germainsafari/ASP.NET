@@ -1,63 +1,68 @@
-import math
-import random
-import string
+class MRG32k3a:
+    def __init__(self, seed1, seed2, seed3, seed4, seed5, seed6):
+        self.m1 = 2**32 - 209
+        self.m2 = 2**32 - 22853
+        self.a12 = 1403580
+        self.a13n = 810728
+        self.a21 = 527612
+        self.a23n = 1370589
+        self.norm = 2.32825e-10
 
-# Constants for MRG32k3a
-norm = 2.328306549295728e-10  # 1 / 2^32
-m1 = 4294967087.0
-m2 = 4294944443.0
-a12 = 1403580.0
-a13n = 810728.0
-a21 = 527612.0
-a23n = 1370589.0
+        self.x = [seed1, seed2, seed3, seed4, seed5, seed6]
 
-# Seeds for MRG32k3a
-s10 = 12345
-s11 = 12345
-s12 = 123
-s20 = 12345
-s21 = 12345
-s22 = 123
+    def generate(self):
+        k, h, p1, p2 = 0, 3, 0, 3
+        q1 = self.m1 // self.a12
+        q2 = self.m2 // self.a21
+
+        k = self.x[h] // self.a13n
+        p1 = self.a13n * (self.x[h] % q1) - k * q1
+
+        if p1 < 0:
+            p1 += self.m1
+
+        self.x[h] = self.x[p1]
+
+        k = self.x[h] // self.a23n
+        p2 = self.a23n * (self.x[h] % q2) - k * q2
+
+        if p2 < 0:
+            p2 += self.m2
+
+        self.x[h] = self.x[p2]
+
+        if self.x[h] == 0:
+            self.x[h] = self.m1 - 1
+
+        return self.x[h] * self.norm
+
 
 def Rand():
-    global s10, s11, s12, s20, s21, s22
-    k, p1, p2 = 0, 0, 0
+    # Set initial seeds
+    seed1, seed2, seed3, seed4, seed5, seed6 = 12345, 12345, 12345, 12345, 12345, 12345
+    generator = MRG32k3a(seed1, seed2, seed3, seed4, seed5, seed6)
+    return generator.generate()
 
-    # Component 1
-    p1 = a12 * s11 - a13n * s10
-    k = math.floor(p1 / m1)
-    p1 -= k * m1
-    if p1 < 0.0:
-        p1 += m1
-    s10 = s11
-    s11 = s12
-    s12 = p1
-
-    # Component 2
-    p2 = a21 * s22 - a23n * s20
-    k = math.floor(p2 / m2)
-    p2 -= k * m2
-    if p2 < 0.0:
-        p2 += m2
-    s20 = s21
-    s21 = s22
-    s22 = p2
-
-    # Combination
-    if p1 <= p2:
-        return ((p1 - p2 + m1) * norm)
-    else:
-        return ((p1 - p2) * norm)
 
 def RandInt(a, b):
-    return a + math.floor((b - a + 1) * Rand())
+    return int(Rand() * (b - a + 1) + a)
+
 
 def RandFloat(a, b):
-    return a + (b - a) * Rand()
+    return Rand() * (b - a) + a
+
 
 def RandElement(A):
     return A[RandInt(0, len(A) - 1)]
 
+
 def RandString(a):
-    characters = string.ascii_letters + string.digits + string.punctuation
-    return ''.join(random.choice(characters) for _ in range(a))
+    symbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-+=<>?,./"
+    return ''.join(RandElement(symbols) for _ in range(a))
+
+
+# Examples
+print(RandInt(1, 10))  # Output: Random integer between 1 and 10
+print(RandFloat(0.0, 1.0))  # Output: Random float between 0.0 and 1.0
+print(RandElement([1, 2, 3, 4, 5]))  # Output: Random element from the array
+print(RandString(8))  # Output: Random string of length 8
