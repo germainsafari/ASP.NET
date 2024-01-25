@@ -1,46 +1,13 @@
 
-Object-Oriented Programming - CS - M.Antkowiak - 2023/2024
-0%
-
-My dashboard
 WSB Merito–DSW Digital Library
 Extranet
 Support
 Germain Safari 
-SECTIONS
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-Skip to main content
 Object-Oriented Programming - CS - M.Antkowiak - 2023/2024
-My WSB
-My courses
-Object-Oriented Programming - CS - M.Antkowiak - 2023/2024
-Tests
+
 Final quiz
-Skip Quiz navigation
-Quiz navigation
-Germain Safari
-Show one page at a time
-Finish review
-Started on	Friday, 19 January 2024, 10:00
-State	Finished
-Completed on	Friday, 19 January 2024, 10:43
-Time taken	42 mins 27 secs
-Grade	18.40 out of 40.00 (46%)
-Question 1
-Correct
-Mark 1.00 out of 1.00
-Flag question
-Question text
+
 The default (and only possible) visibility for methods in an interface is:
 Select one:
 
