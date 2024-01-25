@@ -1,0 +1,1153 @@
+
+WSB Merito–DSW Digital Library
+Extranet
+Support
+Germain Safari 
+
+Object-Oriented Programming - CS - M.Antkowiak - 2023/2024
+
+Final quiz
+
+The default (and only possible) visibility for methods in an interface is:
+Select one:
+
+a.
+protected
+
+
+b.
+private
+
+
+c.
+internal
+
+
+d.
+public
+
+Feedback
+The correct answer is: public
+Question 2
+Partially correct
+Mark 0.60 out of 3.00
+Flag question
+Question textWhat will be the result of the GetValue method for the given values of the arg argument:
+class Test
+{
+   public delegate void f(int arg = 1);
+   static f Add, Sub;
+   static int Result;
+   static Test()
+   {
+      Result = 0;
+      Add = a;
+      Sub = s;
+   }
+   static void a(int arg = 1) { Result += arg; }
+   static void s(int arg = 1) { Result -= arg; }
+   static public int GetValue(int arg)
+   {
+      if (arg == 0) Add(2);
+      else if (arg == 1) Add();
+      else if (arg == 2) Add(5);
+      else if (arg / 2 == 2) Add(5);
+      else Add();
+      return --Result;
+   }
+}
+for Test.GetValue(0) the result will be:Answer
+-1
+
+
+
+for Test.GetValue(1) the result will be:Answer
+-1
+
+
+
+for Test.GetValue(2) the result will be:Answer
+4
+
+
+
+for Test.GetValue(3) the result will be:Answer
+0
+
+
+
+for Test.GetValue(4) the result will be:Answer
+4
+
+
+
+Question 3
+Incorrect
+Mark 0.00 out of 1.00
+Flag question
+Question text
+Given the class hierarchy below:
+class A
+{
+  private char V() { return 'A'; }
+  virtual public void Echo1() { Console.Write(V()); }
+  public void Echo2() { Console.Write(V()); }
+}
+class B : A
+{
+  private char V() { return 'B'; }
+  new public void Echo2() { Console.Write(V()); }
+}
+class C : B
+{
+  private char V() { return 'C'; }
+  override public void Echo1() { Console.Write(V()); }
+  new public void Echo2() { Console.Write(V()); }
+}
+the following sequence of statements was executed:
+
+A a = new A();    a.Echo1();
+B b = new B();    b.Echo1();
+C c = new C();    c.Echo1();
+A a1 = b;         a1.Echo1();  a1.Echo2();
+  a1 = c;         a1.Echo1();  a1.Echo2();
+Which of the following strings will appear on the screen?
+
+Select one:
+
+a.
+AACAACA
+
+
+b.
+ABCBAAA
+
+
+c.
+ABCBACA
+
+
+d.
+ABBBABA
+
+Feedback
+The correct answer is: AACAACA
+Question 4
+Incorrect
+Mark 0.00 out of 1.00
+Flag question
+Question text
+Given the class hierarchy below:
+class A
+{
+  protected char V() { return 'A'; }
+  virtual public void Echo1() { Console.Write(V()); }
+  public void Echo2() { Console.Write(V()); }
+}
+class B : A
+{
+  protected char V() { return 'B'; }
+  override  public void Echo1() { Console.Write(V()); }
+  new public void Echo2() { Console.Write(V()); }
+}
+class C : B
+{
+  override public void Echo1() { Console.Write(V()); }
+}
+the following sequence of statements was executed:
+
+A a = new A();    a.Echo1();
+B b = new B();    b.Echo1();
+C c = new C();    c.Echo1();
+A a1 = b;         a1.Echo1();  a1.Echo2();
+  a1 = c;         a1.Echo1();  a1.Echo2();
+Which of the following strings will appear on the screen?
+
+Select one:
+
+a.
+ABBAAAA
+
+
+b.
+ABBAABA
+
+
+c.
+ABBBAAA
+
+
+d.
+ABBBABA
+
+Feedback
+The correct answer is: ABBBABA
+Question 5
+Incorrect
+Mark 0.00 out of 1.00
+Flag question
+Question text
+Given the class definition below:
+class Element
+{
+   public double v;
+   public Element() { v = 0; }
+   public Element(int a, int b) { v = a + b; }
+   public Element(float a, int b) { v = a + b + 1; }
+   public Element(Element e) { this.v = e.v; }
+   public Element(Element a, Element b) { v = a.v + b.v; }
+}
+Which of the following ways of creating the object is incorrect:
+
+Select one:
+
+a.
+Element e7 = new Element(new Element(new Element(5.0f,1)));
+
+
+b.
+Element e5 = new Element(new Element(1f), new Element());
+
+
+c.
+Element e8 = new Element(new Element(new Element(1, 5)));
+
+
+d.
+Element e6 = new Element(new Element(new Element()));
+
+Feedback
+The correct answer is: Element e5 = new Element(new Element(1f), new Element());
+Question 6
+Correct
+Mark 1.00 out of 1.00
+Flag question
+Question text
+Are static private fields inherited:
+Select one:
+
+a.
+yes and they are directly accessible in a child class
+
+
+b.
+no and they are not accessible in a child class
+
+
+c.
+yes but they are not directly accessible in a child class
+
+
+d.
+none of these
+
+Feedback
+The correct answer is: yes but they are not directly accessible in a child class
+Question 7
+Correct
+Mark 1.00 out of 1.00
+Flag question
+Question text
+The default visibility for an outer (not nested) struct(ure) is:
+Select one:
+
+a.
+public
+
+
+b.
+private
+
+
+c.
+internal
+
+
+d.
+protected
+
+Feedback
+The correct answer is: internal
+Question 8
+Incorrect
+Mark 0.00 out of 1.00
+Flag question
+Question text
+Based on the class definition:
+class Element
+{
+  public double v;
+  public Element() { v = 0; }
+  public Element(int a, int b) { v = a + b; }
+  public Element(float a, int b) { v = a + b + 1; }
+  public Element(Element e) { this.v = e.v; }
+  public Element(Element a, Element b) { v = a.v + b.v; }
+}
+a new object e was created. Next, as a result of the statement:
+
+Console.WriteLine(e.v);
+the number 3 was shown up on the screen. Which of the following methods of creating the object was used?
+
+Select one:
+
+a.
+Element e = new Element(new Element(), new Element());
+
+
+b.
+Element e = new Element(new Element(new Element(1, 5)));
+
+
+c.
+Element e = new Element(new Element(new Element(5.0f, 1)));
+
+
+d.
+Element e = new Element(new Element(0, 0), new Element(3, 0));
+
+Feedback
+The correct answer is: Element e = new Element(new Element(0, 0), new Element(3, 0));
+Question 9
+Correct
+Mark 2.50 out of 2.50
+Flag question
+Question textComplete the following code to get the correct definition of class hierarchy where:
+MyBaseClass is an abstract base class
+IMyInterface is a public interface
+MyDerivedClass is a child class inheriting from MyBaseClass and IMyInterface
+
+abstract class MyBaseClass
+{
+    abstract public int A() Answer
+;
+
+
+
+    abstract protected char B() Answer
+;
+
+
+
+    abstract public uint C { get; set; }
+}
+public interface IMyInterface
+{
+    int D()Answer
+;
+
+
+
+    int E { get; set; }
+}
+class MyDerivedClass : Answer
+MyBaseClass
+
+
+, Answer
+IMyInterface
+
+
+ 
+{
+    public override int A() { return 1; }
+    protected override char B() { return 'b'; }
+    public int D() { return 1; }
+    public override uint C
+    {
+        get;
+        set;
+    }
+    public int E
+    {
+        get;
+        set;
+    }
+}
+Question 10
+Incorrect
+Mark 0.00 out of 1.00
+Flag question
+Question text
+Given the class hierarchy below:
+class A
+{
+  private char V() { return 'A'; }
+  virtual public void Echo1() { Console.Write(V()); }
+  public void Echo2() { Console.Write(V()); }
+}
+class B : A
+{
+  private char V() { return 'B'; }
+  new public void Echo2() { Console.Write(V()); }
+}
+class C : B
+{
+  private char V() { return 'C'; }
+}
+the following sequence of statements was executed:
+
+A a = new A();    a.Echo1();
+B b = new B();    b.Echo1();
+C c = new C();    c.Echo1();
+A a1 = b;         a1.Echo1();  a1.Echo2();
+  a1 = c;         a1.Echo1();  a1.Echo2();
+Which of the following strings will appear on the screen?
+
+Select one:
+
+a.
+AACAACA
+
+
+b.
+ABBBABA
+
+
+c.
+ABCBAAA
+
+
+d.
+AAAAAAA
+
+Feedback
+The correct answer is: AAAAAAA
+Question 11
+Incorrect
+Mark 0.00 out of 1.00
+Flag question
+Question text
+The default modifier of methods visibility in the struct(ure) is:
+Select one:
+
+a.
+protected
+
+
+b.
+public
+
+
+c.
+private
+
+
+d.
+internal
+
+Feedback
+The correct answer is: private
+Question 12
+Correct
+Mark 1.00 out of 1.00
+Flag question
+Question text
+public methods are:
+Select one:
+
+a.
+accessible for class methods, accessible from outside the class, inaccessible for child classes
+
+
+b.
+accessible for class methods, inaccessible from outside the class, accessible for child classes
+
+
+c.
+accessible for class methods, accessible from outside the class, accessible for child classes
+
+
+d.
+accessible for class methods, inaccessible from outside the class, inaccessible for child classes
+
+Feedback
+The correct answer is: accessible for class methods, accessible from outside the class, accessible for child classes
+
+Question 13
+Partially correct
+Mark 0.50 out of 2.50
+Flag question
+Question textComplete the following code to get the correct definition of class hierarchy where:
+MyBaseClass is an abstract base class
+IMyInterface is a public interface
+MyDerivedClass is a child class inheriting from MyBaseClass and IMyInterface
+
+abstract class MyBaseClass
+{
+    abstract public int A() Answer
+;
+
+
+
+    abstract protected char B();
+    abstract public uint C { get; set; }
+}
+public interface IMyInterface
+{
+    int D();
+    int E { get; set; }
+}
+class MyDerivedClass : MyBaseClass, IMyInterface
+{
+    public override int A() { return 1; }
+    protected override char B() { return 'b'; }
+    public int D() { return 1; }
+    public override uint C
+    {
+        get Answer
+{ return C; }
+
+
+
+        set Answer
+{ C = value; }
+
+
+
+    }
+    public int E
+    {
+        get Answer
+{ return E; }
+
+
+
+        set Answer
+{ E = value; }
+
+
+
+    }
+}
+
+/*
+abstract class MyBaseClass
+{
+    abstract public int A();
+
+    abstract protected char B();
+
+    abstract public uint C { get; set; }
+}
+
+public interface IMyInterface
+{
+    int D();
+    int E { get; set; }
+}
+
+class MyDerivedClass : MyBaseClass, IMyInterface
+{
+    public override int A() { return 1; }
+
+    protected override char B() { return 'b'; }
+
+    private uint _c;
+
+    public override uint C
+    {
+        get { return _c; }
+        set { _c = value; }
+    }
+
+    private int _e;
+
+    public int E
+    {
+        get { return _e; }
+        set { _e = value; }
+    }
+}
+
+*/
+
+Question 14
+Partially correct
+Mark 0.50 out of 2.50
+Flag question
+Question textComplete the following code to get the correct definition of class hierarchy where:
+MyBaseClass is an abstract base class
+IMyInterface is a public interface
+MyDerivedClass is a child class inheriting from MyBaseClass and IMyInterface
+
+abstract class MyBaseClass
+{
+    abstract public int A();
+    abstract protected char B() Answer
+;
+
+
+
+    abstract public uint C { get; set; }
+}
+public interface IMyInterface
+{
+    int D();
+    int E { get; set; }
+}
+class MyDerivedClass : MyBaseClass, IMyInterface
+{
+    public override int A() { return 1; }
+    protected override char B() { return 'b'; }
+    public int D() { return 1; }
+    public override uint C
+    {
+        get Answer
+{ return C; }
+
+
+
+        set Answer
+{ C = value; }
+
+
+
+    }
+    public int E
+    {
+        get Answer
+{ return E; }
+
+
+
+        set Answer
+{ E = value; }
+
+
+
+    }
+}
+/*
+abstract class MyBaseClass
+{
+    abstract public int A();
+    abstract protected char B();
+    abstract public uint C { get; set; }
+}
+
+public interface IMyInterface
+{
+    int D();
+    int E { get; set; }
+}
+
+class MyDerivedClass : MyBaseClass, IMyInterface
+{
+    public override int A() { return 1; }
+    protected override char B() { return 'b'; }
+    public override uint C { get; set; }
+
+    public int D() { return 1; }
+
+    private int _e;
+
+    public int E
+    {
+        get { return _e; }
+        set { _e = value; }
+    }
+}
+
+*/
+Question 15
+Partially correct
+Mark 2.00 out of 2.50
+Flag question
+Question text
+Given the following class definition:
+
+class A
+    : A0
+{
+  static int a1;
+  public static int a2;
+  protected static int a3;
+  int b;
+  public int c;
+  protected int d;
+  static A() { }
+  A() { }
+  public A(int a) { }
+  public void B(int na) { }
+  void B(float a) { }
+  protected void B() { }
+  A(A a) { }
+  ~A() { }
+  int v2 { get; set; }
+  protected int v3 { get; set; }
+  public int v4 { get; set; }
+  static int v5 { get; set; }
+  protected static int v6 { get; set; }
+  public static int v7 { get; set; }
+}
+match members descriptions.
+
+void B(float a) { }
+
+Answer 1
+non-static private method
+ 
+public static int a2;
+
+Answer 2
+public static field
+ 
+public static int v7 { get; set; }
+
+Answer 3
+public static field
+ 
+static int a1;
+
+Answer 4
+private static field
+ 
+protected static int a3;
+
+Answer 5
+protected static field
+ 
+Feedback
+The correct answer is: void B(float a) { } → non-static private method, public static int a2; → public static field, public static int v7 { get; set; } → static public property, static int a1; → private static field, protected static int a3; → protected static field
+
+Question 16
+Incorrect
+Mark 0.00 out of 1.00
+Flag question
+Question text
+Given the class hierarchy below:
+class A
+{
+  private char V() { return 'A'; }
+  virtual public void Echo1() { Console.Write(V()); }
+  public void Echo2() { Console.Write(V()); }
+}
+class B : A
+{
+  private char V() { return 'B'; }
+  override  public void Echo1() { Console.Write(V()); }
+  new public void Echo2() { Console.Write(V()); }
+}
+class C : B
+{
+  private char V() { return 'C'; }
+  override public void Echo1() { Console.Write(V()); }
+}
+the following sequence of statements was executed:
+
+A a = new A();    a.Echo1();
+B b = new B();    b.Echo1();
+C c = new C();    c.Echo1();
+A a1 = b;         a1.Echo1();  a1.Echo2();
+  a1 = c;         a1.Echo1();  a1.Echo2();
+Which of the following strings will appear on the screen?
+
+Select one:
+
+a.
+AACAACA
+
+
+b.
+ABCBAAA
+
+
+c.
+ABCBACA
+
+
+d.
+ABBBABA
+
+Feedback
+The correct answer is: ABCBACA
+
+Question 17
+Partially correct
+Mark 1.20 out of 3.00
+Flag question
+Question textWhat will be the result of the GetValue method for the given values of the arg argument:
+class Test
+{
+   public delegate void f(int arg = 1);
+   static f Add, Sub;
+   static int Result;
+   static Test()
+   {
+      Result = 8;
+      Add = a;
+      Sub = s;
+   }
+   static void a(int arg = 1) { Result += arg; }
+   static void s(int arg = 1) { Result -= arg; }
+   static public int GetValue(int arg)
+   {
+      if (arg++ == 0) Add(2);
+      if (arg == 1) Add();
+      if (arg % 2 == 1) Add(5);
+      else if (arg / 2 == 2) Add(4);
+      Add();
+      return Result++;
+   }
+}
+for Test.GetValue(0) the result will be:Answer
+9
+
+
+
+for Test.GetValue(1) the result will be:Answer
+9
+
+
+
+for Test.GetValue(2) the result will be:Answer
+10
+
+
+
+for Test.GetValue(3) the result will be:Answer
+15
+
+
+
+for Test.GetValue(4) the result will be:Answer
+16
+
+
+
+Question 18
+Correct
+Mark 1.00 out of 1.00
+Flag question
+Question text
+Based on the class definition:
+class Element
+{
+  public double v;
+  public Element() { v = 0; }
+  public Element(int a, int b) { v = a + b; }
+  public Element(float a, int b) { v = a + b + 1; }
+  public Element(Element e) { this.v = e.v; }
+  public Element(Element a, Element b) { v = a.v + b.v; }
+}
+a new object e was created. Next, as a result of the statement:
+
+Console.WriteLine(e.v);
+the number 7 was shown up on the screen. Which of the following methods of creating the object was used?
+
+Select one:
+
+a.
+Element e = new Element(new Element(new Element(5.0f, 1)));
+
+
+b.
+Element e = new Element(new Element(0, 0), new Element(3, 0));
+
+
+c.
+Element e = new Element(new Element(), new Element());
+
+
+d.
+Element e = new Element(new Element(new Element(1, 5)));
+
+Feedback
+The correct answer is: Element e = new Element(new Element(new Element(5.0f, 1)));
+
+Question 19
+Partially correct
+Mark 0.60 out of 3.00
+Flag question
+Question textWhat will be the result of the GetValue method for the given values of the arg argument:
+class Test
+{
+   public delegate void f(int arg = 1);
+   static f Add, Sub;
+   static int Result;
+   static Test()
+   {
+      Result = 8;
+      Add = a;
+      Sub = s;
+   }
+   static void a(int arg = 1) { Result += arg; }
+   static void s(int arg = 1) { Result -= arg; }
+   static public int GetValue(int arg)
+   {
+      if (arg++ == 0) Add(2);
+      else if (arg == 1) Add();
+      else if (arg % 2 == 0) Add(5);
+      else if (arg / 2 == 2) Add(4);
+      else Add();
+      return ++Result;
+   }
+}
+for Test.GetValue(0) the result will be:Answer
+9
+
+
+
+for Test.GetValue(1) the result will be:Answer
+9
+
+
+
+for Test.GetValue(2) the result will be:Answer
+14
+
+
+
+for Test.GetValue(3) the result will be:Answer
+15
+
+
+
+for Test.GetValue(4) the result will be:Answer
+16
+
+
+
+Question 20
+Incorrect
+Mark 0.00 out of 1.00
+Flag question
+Question text
+Are non-static private methods inherited:
+Select one:
+
+a.
+yes and they are directly accessible (callable) in a child class
+
+b.
+no and therefore they are not accessible (callable) in a child class
+
+c.
+yes but they are not directly accessible (callable) in a child class
+
+d.
+none of these
+Feedback
+The correct answer is: no and therefore they are not accessible (callable) in a child class
+
+
+Question 21
+Incorrect
+Mark 0.00 out of 1.00
+Flag question
+Question text
+Are static protected fields inherited:
+Select one:
+
+a.
+yes and they are directly accessible in a child class
+
+
+b.
+no and they are not accessible in child class
+
+
+c.
+yes but they are not directly accessible in a child class
+
+
+d.
+none of these
+
+Feedback
+The correct answer is: yes and they are directly accessible in a child class
+
+
+Question 22
+Correct
+Mark 1.00 out of 1.00
+Flag question
+Question text
+static methods are:
+Select one:
+
+a.
+inaccessible for all class methods
+
+
+b.
+accessible for all class methods
+
+
+c.
+accessible only for non-static class methods
+
+
+d.
+accessible only for static class methods
+
+Feedback
+The correct answer is: accessible for all class methods
+
+
+Question 23
+Partially correct
+Mark 2.00 out of 2.50
+Flag question
+Question text
+Given the following class definition:
+
+class A
+    : A0
+{
+  static int a1;
+  public static int a2;
+  protected static int a3;
+  int b;
+  public int c;
+  protected int d;
+  static A() { }
+  A() { }
+  public A(int a) { }
+  public void B(int na) { }
+  void B(float a) { }
+  protected void B() { }
+  A(A a) { }
+  ~A() { }
+  int v2 { get; set; }
+  protected int v3 { get; set; }
+  public int v4 { get; set; }
+  static int v5 { get; set; }
+  protected static int v6 { get; set; }
+  public static int v7 { get; set; }
+}
+match members descriptions.
+
+public static int a2;
+
+Answer 1
+public static field
+ 
+public int v4 { get; set; }
+
+Answer 2
+non-static public property
+ 
+protected static int a3;
+
+Answer 3
+protected static field
+ 
+static int a1;
+
+Answer 4
+private static field
+ 
+public static int v7 { get; set; }
+
+Answer 5
+public static field
+ 
+Feedback
+The correct answer is: public static int a2; → public static field, public int v4 { get; set; } → non-static public property, protected static int a3; → protected static field, static int a1; → private static field, public static int v7 { get; set; } → static public property
+
+
+Question 24
+Correct
+Mark 2.50 out of 2.50
+Flag question
+Question text
+Given the following class definition:
+
+class A
+    : A0
+{
+  static int a1;
+  public static int a2;
+  protected static int a3;
+  int b;
+  public int c;
+  protected int d;
+  static A() { }
+  A() { }
+  public A(int a) { }
+  public void B(int na) { }
+  void B(float a) { }
+  protected void B() { }
+  A(A a) { }
+  ~A() { }
+  int v2 { get; set; }
+  protected int v3 { get; set; }
+  public int v4 { get; set; }
+  static int v5 { get; set; }
+  protected static int v6 { get; set; }
+  public static int v7 { get; set; }
+}
+match members descriptions.
+
+protected static int a3;
+
+Answer 1
+protected static field
+ 
+static int a1;
+
+Answer 2
+private static field
+ 
+public static int a2;
+
+Answer 3
+public static field
+ 
+protected static int v6 { get; set; }
+
+Answer 4
+static protected property
+ 
+public static int v7 { get; set; }
+
+Answer 5
+static public property
+ 
+Feedback
+The correct answer is: protected static int a3; → protected static field, static int a1; → private static field, public static int a2; → public static field, protected static int v6 { get; set; } → static protected property, public static int v7 { get; set; } → static public property
+
+
+Question 25
+Incorrect
+Mark 0.00 out of 1.00
+Flag question
+Question text
+Based on the class definition:
+class Element
+{
+  public double v;
+  public Element() { v = 0; }
+  public Element(int a, int b) { v = a + b; }
+  public Element(float a, int b) { v = a + b + 1; }
+  public Element(Element e) { this.v = e.v; }
+  public Element(Element a, Element b) { v = a.v + b.v; }
+}
+a new object e was created. Next, as a result of the statement:
+
+Console.WriteLine(e.v);
+the number 6 was shown up on the screen. Which of the following methods of creating the object was used?
+
+Select one:
+
+a.
+Element e = new Element(new Element(new Element(5.0f, 1)));
+
+
+b.
+Element e = new Element(new Element(0, 0), new Element(3, 0));
+
+
+c.
+Element e = new Element(new Element(), new Element());
+
+
+d.
+Element e = new Element(new Element(new Element(1, 5)));
+
+Feedback
+The correct answer is: Element e = new Element(new Element(new Element(1, 5)));
+Finish review
+Jump to...
+Jump to...
